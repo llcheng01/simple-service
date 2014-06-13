@@ -1,0 +1,119 @@
+diff --git a/bizplay.iml b/bizplay.iml
+new file mode 100644
+--- /dev/null
++++ b/bizplay.iml
+@@ -0,0 +1,12 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <exclude-output />
++    <content url="file://$MODULE_DIR$">
++      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
++
+diff --git a/app/views/index.scala.html b/app/views/index.scala.html
+--- a/app/views/index.scala.html
++++ b/app/views/index.scala.html
+@@ -43,11 +43,13 @@
+             <!--Body content-->
+             <table class="table table-striped">
+                 <thead>
+-                    <tr>
+-                        <th>ID</th>
+-                        <th>Eapi ID</th>
+-                        <th>Name</th>
+-                        <th>Active?</th>
+-                    </tr>
++                <tr>
++                    <th>ID</th>
++                    <th>Eapi ID</th>
++                    <th>Name</th>
++                    <th>Payer ID</th>
++                    <th>Payer Name</th>
++                    <th>Active?</th>
++                </tr>
+                 </thead>
+                 <tbody>
+@@ -52,13 +54,17 @@
+                 </thead>
+                 <tbody>
+-                    <tr  ng-repeat="mapping in mappings | filter:query | orderBy:orderProp">
+-                        <td>{{mapping.clearinghousePayerID}}</td>
+-                        <td>{{mapping.eligibleApiPayerNumber}}</td>
+-                        <td>{{mapping.eligibleApiPayerName}}</td>
+-                        <td>{{mapping.active}}</td>
+-                    </tr>
++                <tr  ng-repeat="mapping in mappings | filter:query | orderBy:orderProp">
++                    <td>{{mapping.clearinghousePayerID}}</td>
++                    <td>{{mapping.eligibleApiPayerNumber}}</td>
++                    <td>{{mapping.eligibleApiPayerName}}</td>
++                    <td>{{mapping.payerNumber}}</td>
++                    <td>{{mapping.payerName}}</td>
++                    <td>
++                        <input type="checkbox" name="active" ng-checked="{{mapping.active}}" />
++                    </td>
++                </tr>
+                 </tbody>
+             </table>
+ 
+         </div>
+     </div>
+@@ -60,11 +66,8 @@
+                 </tbody>
+             </table>
+ 
+         </div>
+     </div>
+-    <hr/>
+-    <footer>
+-        <p>© Company 2013</p>
+-    </footer>
++
+ </div>
+ </div>
+@@ -69,3 +72,7 @@
+ </div>
+ </div>
++<hr/>
++<footer>
++    <p>© Company 2013</p>
++</footer>
+ }
+diff --git a/public/javascripts/controller.js b/public/javascripts/controller.js
+--- a/public/javascripts/controller.js
++++ b/public/javascripts/controller.js
+@@ -3,6 +3,6 @@
+ /* Controllers */
+ 
+ function MappingListCtrl($scope, $http) {
+-    $http.get('/api/eligibleapi/mappings').success(function(data) {
++    $http.get('/api/eligibleapi/mappingpayers').success(function(data) {
+         $scope.mappings = data;
+     });
+@@ -7,6 +7,10 @@
+         $scope.mappings = data;
+     });
+-}
++
++    $scope.orderProp = 'clearinghousePayerID';
++
++};
++
+ 
+ function MetricsListCtrl($scope, $http) {
+     $http.get('/api/metrics/transactions').success(function(data) {
+@@ -10,6 +14,5 @@
+ 
+ function MetricsListCtrl($scope, $http) {
+     $http.get('/api/metrics/transactions').success(function(data) {
+-        $scope.transactions = data;
+-    });
+-}
+\ No newline at end of file
++         $scope.transactions = data;
++});
+\ No newline at end of file

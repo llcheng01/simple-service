@@ -1,0 +1,72 @@
+@main("Metrics") {
+<div  ng-controller="MetricsListCtrl">
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="#">Eligibility Metrics</a>
+            <div class="nav-collapse collapse">
+                <!--
+                <p class="navbar-text pull-right">
+                    Logged in as <a href="#" class="navbar-link">Username</a>
+                </p>
+                -->
+                <ul class="nav">
+                    <li><a href="/">Home</a></li>
+                    <li class="active"><a href="/metrics">Metrics</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span3">
+            <!--Sidebar content-->
+            <div class="input-append">
+                <span class="add-on">Search:</span>
+                <input ng-model="query">
+            </div>
+            <div class="input-append">
+                <span class="add-on">Sort by:</span>
+                <select ng-model="orderProp">
+                    <option value="Name">Alphabetical</option>
+                </select>
+            </div>
+        </div>
+        <div class="span9">
+            <!--Body content-->
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Count</th>
+                    <th>Cost per click</th>
+                    <th>Total</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr  ng-repeat="transaction in transactions | filter:query | orderBy:orderProp">
+                    <td>{{transaction.name}}</td>
+                    <td>{{transaction.count}}</td>
+                    <td>
+                        <input type="text" name="costperclick" ng-model="transaction.costperclick" />
+                    </td>
+                    <td>${{calcRowTotal(transaction) | number:2}}</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <hr/>
+    <footer>
+        <p>© Kareo 2013</p>
+    </footer>
+</div>
+</div>
+}

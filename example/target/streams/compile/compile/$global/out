@@ -1,0 +1,43 @@
+[0m[[0mdebug[0m] [0m[0m
+[0m[[0mdebug[0m] [0mInitial source changes: [0m
+[0m[[0mdebug[0m] [0m	removed:Set()[0m
+[0m[[0mdebug[0m] [0m	added: Set()[0m
+[0m[[0mdebug[0m] [0m	modified: Set(/home/jcheng/Documents/workspace/example/src/main/scala/example/Lists.scala)[0m
+[0m[[0mdebug[0m] [0mRemoved products: Set()[0m
+[0m[[0mdebug[0m] [0mModified external sources: Set()[0m
+[0m[[0mdebug[0m] [0mModified binary dependencies: Set()[0m
+[0m[[0mdebug[0m] [0mInitial directly invalidated sources: Set(/home/jcheng/Documents/workspace/example/src/main/scala/example/Lists.scala)[0m
+[0m[[0mdebug[0m] [0m[0m
+[0m[[0mdebug[0m] [0mSources indirectly invalidated by:[0m
+[0m[[0mdebug[0m] [0m	product: Set()[0m
+[0m[[0mdebug[0m] [0m	binary dep: Set()[0m
+[0m[[0mdebug[0m] [0m	external source: Set()[0m
+[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(/home/jcheng/Documents/workspace/example/src/main/scala/example/Lists.scala)[0m
+[0m[[0minfo[0m] [0mCompiling 1 Scala source to /home/jcheng/Documents/workspace/example/target/scala-2.10/classes...[0m
+[0m[[0mdebug[0m] [0mRunning cached compiler 397c34, interfacing (CompilerInterface) with Scala compiler version 2.10.2[0m
+[0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
+[0m[[0mdebug[0m] [0m	-deprecation[0m
+[0m[[0mdebug[0m] [0m	-feature[0m
+[0m[[0mdebug[0m] [0m	-d[0m
+[0m[[0mdebug[0m] [0m	/home/jcheng/Documents/workspace/example/target/scala-2.10/classes[0m
+[0m[[0mdebug[0m] [0m	-bootclasspath[0m
+[0m[[0mdebug[0m] [0m	/usr/lib/jvm/jdk1.7.0_21/jre/lib/resources.jar:/usr/lib/jvm/jdk1.7.0_21/jre/lib/rt.jar:/usr/lib/jvm/jdk1.7.0_21/jre/lib/sunrsasign.jar:/usr/lib/jvm/jdk1.7.0_21/jre/lib/jsse.jar:/usr/lib/jvm/jdk1.7.0_21/jre/lib/jce.jar:/usr/lib/jvm/jdk1.7.0_21/jre/lib/charsets.jar:/usr/lib/jvm/jdk1.7.0_21/jre/lib/jfr.jar:/usr/lib/jvm/jdk1.7.0_21/jre/classes:/home/jcheng/.sbt/boot/scala-2.10.2/lib/scala-library.jar[0m
+[0m[[0mdebug[0m] [0m	-classpath[0m
+[0m[[0mdebug[0m] [0m	/home/jcheng/Documents/workspace/example/target/scala-2.10/classes[0m
+[0m[[31merror[0m] [0m/home/jcheng/Documents/workspace/example/src/main/scala/example/Lists.scala:29: constructor cannot be instantiated to expected type;[0m
+[0m[[31merror[0m] [0m found   : scala.collection.immutable.::[B][0m
+[0m[[31merror[0m] [0m required: java.util.List[Int][0m
+[0m[[31merror[0m] [0m      case x :: tail => x + sum(tail)[0m
+[0m[[31merror[0m] [0m             ^[0m
+[0m[[31merror[0m] [0m/home/jcheng/Documents/workspace/example/src/main/scala/example/Lists.scala:29: not found: value x[0m
+[0m[[31merror[0m] [0m      case x :: tail => x + sum(tail)[0m
+[0m[[31merror[0m] [0m                        ^[0m
+[0m[[31merror[0m] [0m/home/jcheng/Documents/workspace/example/src/main/scala/example/Lists.scala:30: pattern type is incompatible with expected type;[0m
+[0m[[31merror[0m] [0m found   : scala.collection.immutable.Nil.type[0m
+[0m[[31merror[0m] [0m required: java.util.List[Int][0m
+[0m[[31merror[0m] [0mNote: if you intended to match against the class, try `case _: <none>`[0m
+[0m[[31merror[0m] [0m      case Nil => 0[0m
+[0m[[31merror[0m] [0m           ^[0m
+[0m[[31merror[0m] [0mthree errors found[0m
+[0m[[0mdebug[0m] [0mCompilation failed (CompilerInterface)[0m
+[0m[[31merror[0m] [0m(assignment/compile:[31mcompile[0m) Compilation failed[0m

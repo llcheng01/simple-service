@@ -1,0 +1,18 @@
+    __    _             __           
+   / /_  (_)___  ____  / /___ ___  __
+  / __ \/ /_  / / __ \/ / __ `/ / / /
+ / /_/ / / / /_/ /_/ / / /_/ / /_/ / 
+/_.___/_/ /___/ .___/_/\__,_/\__, /  
+             /_/            /____/   
+
+This is your new Play 2.1 application
+=====================================
+
+This file will be packaged with your application, when using `play dist`.
+
+Run Book:
+1. Install IntelliJ IDEA Community Edition. Also use the Scala Custom Language pluggin.
+2. Install play framework. This consists of downloading a zip file, placing it somewhere accessible, and changing your path variable.
+3. Clone the https://hg.kareo.com/bizplay repo.
+4. To install the IntelliJ project files, use the command-prompt to go into the project and run "play idea". This is because, by default, we don't include the IntelliJ project files (see the .hgignore).
+5. In the command prompt type "play ~run" to run play's development web-server.

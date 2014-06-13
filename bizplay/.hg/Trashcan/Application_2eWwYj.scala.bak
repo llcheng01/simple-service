@@ -1,0 +1,24 @@
+package controllers
+
+import play.api._
+import play.api.mvc._
+import anorm._
+import anorm.SqlParser._
+import play.api.db.DB
+
+import play.api.Play.current
+
+object Application extends Controller {
+
+  def index = Action {
+    var clearinghouseCount = 0
+
+    DB.withConnection { implicit c =>
+      //clearinghouseCount = SQL("SELECT COUNT(*) FROM Clearinghouse").single(scalar.Int)
+       clearinghouseCount = SQL("SELECT COUNT(*) FROM Clearinghouse").as(scalar[Int].single)
+    }
+
+    Ok(views.html.index("Your new application is ready. There are " + clearinghouseCount + " clearinghouses"))
+  }
+
+}

@@ -1,0 +1,28 @@
+syntax: glob
+*.classpath
+*.settings
+*.idea_modules
+*.project
+*.iml
+*.idea
+*.iml
+*.history
+syntax: regexp
+^logs/
+^project/project/
+^project/target/
+^target/
+^tmp/
+/tmp/
+/targert/
+/project/project/
+/project/target/
+/logs/
+/out/
+/RUNNING_PID/
+/dist/
+^dist/
+^dist/
+/dist/
+/out/
+^.hgignore$

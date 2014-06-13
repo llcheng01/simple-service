@@ -1,0 +1,11 @@
+@()
+
+@moreScripts = {
+<script src="@routes.Assets.at("javascripts/main.js")"></script>
+}
+
+@main("Angular Js Test", moreScripts) {
+
+<div ng-view></div>
+
+}

@@ -1,0 +1,15 @@
+'use strict';
+
+/* Controllers */
+
+function MappingListCtrl($scope, $http) {
+    $http.get('/api/eligibleapi/mappings').success(function(data) {
+        $scope.mappings = data;
+    });
+}
+
+function MetricsListCtrl($scope, $http) {
+    $http.get('/api/metrics/transactions').success(function(data) {
+        $scope.transactions = data;
+    });
+}

@@ -1,0 +1,26 @@
+# use glob syntax.
+syntax: glob
+
+# general
+*~
+
+# Eclipse
+.settings
+.cache
+.project
+.classpath
+bin
+
+# IDEA
+.idea
+.idea_modules
+
+# SBT
+dist
+project/project
+project/target
+target
+.target
+
+# Play
+logs

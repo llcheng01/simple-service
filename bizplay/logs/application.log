@@ -1,0 +1,9 @@
+2013-07-19 17:41:01,703 - [INFO] - from play in main 
+Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+
+2013-07-19 17:41:35,817 - [INFO] - from play in New I/O worker #1 
+database [default] connected at jdbc:sqlserver://kdev-db04:1433;authenticationScheme=nativeAuthentication;xopenStates=false;sendTimeAsDatetime=true;trustServerCertificate=false;sendStringParametersAsUnicode=true;selectMethod=direct;responseBuffering=adaptive;packetSize=8000;multiSubnetFailover=false;loginTimeout=15;lockTimeout=-1;lastUpdateCount=true;encrypt=false;disableStatementPooling=true;databaseName=Superbill_Shared;applicationName=Microsoft JDBC Driver for SQL Server;applicationIntent=readwrite;
+
+2013-07-19 17:41:35,919 - [INFO] - from play in New I/O worker #1 
+Application started (Dev)
+

@@ -1,0 +1,33 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index
+
+# Metrics page
+GET     /metrics                           controllers.Metrics.index
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+# Read the eligible API mappings
+GET     /api/eligibleapi/mappings   controllers.Mappings.list
+
+# Update the eligible API mappings
+PUT     /api/eligibleapi/mappings   controllers.Mappings.update
+
+# Read the eligible API mapping-payers
+GET     /api/eligibleapi/mappingpayers   controllers.MappingPayers.list
+
+# Update the eligible API mapping-payers
+PUT     /api/eligibleapi/mappingpayers   controllers.MappingPayers.update
+
+# Read the eligible API payers
+GET     /api/eligibleapi/payers   controllers.Payers.list
+
+# Update the eligible API payers
+PUT     /api/eligibleapi/payers   controllers.Payers.update
+
+# Read the eligible API payers
+GET     /api/metrics/transactions   controllers.EligibilityRequestReports.list

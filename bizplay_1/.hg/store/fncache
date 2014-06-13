@@ -1,0 +1,14 @@
+data/project/build.properties.i
+data/public/images/favicon.png.i
+data/conf/application.conf.i
+data/public/stylesheets/main.css.i
+data/project/Build.scala.i
+data/test/ApplicationSpec.scala.i
+data/public/javascripts/jquery-1.9.0.min.js.i
+data/project/plugins.sbt.i
+data/conf/routes.i
+data/app/controllers/Application.scala.i
+data/app/views/main.scala.html.i
+data/test/IntegrationSpec.scala.i
+data/README.i
+data/app/views/index.scala.html.i

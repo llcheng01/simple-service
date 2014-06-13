@@ -1,0 +1,76 @@
+package controllers
+
+import play.api._
+import play.api.mvc._
+import anorm._
+import anorm.SqlParser._
+import play.api.db.DB
+import play.api.libs.json.Format
+import play.api.libs.json.JsValue
+import play.api.libs.json.JsObject
+import play.api.libs.json.JsString
+import play.api.libs.json.JsNumber
+import play.api.libs.json.JsBoolean
+
+import play.api.Play.current
+import java.io.Reader
+
+object Application extends Controller {
+  /*
+  def index = Action {
+    var clearinghouseCount = 0
+
+    // DB.withConnection { implicit c =>
+    //  clearinghouseCount = SQL("SELECT COUNT(*) FROM Clearinghouse").as(scalar[Int].single)
+    // }
+
+    // Ok(views.html.index("Your new application is ready. There are " + clearinghouseCount + " clearinghouses"))
+    OK(views.html.index("Your new application is ready.")
+  }
+  */
+
+  def index = Action { implicit request =>
+    Ok(views.html.index())
+  }
+
+  // Makes some routes available via javascript
+  def javascriptRoutes = Action { implicit request =>
+    Ok(
+      Routes.javascriptRouter("jsRoutes")(
+        routes.javascript.Application.tasks
+      )
+    ).as("text/javascript")
+  }
+
+  //Model for the Json response, this should be in database and more elaborated in a real app
+  case class Task(id: Int, text: String, done: Boolean = false)
+
+  // to facilitate conversion from class to Json we create this implicit
+  /*
+  object Task {
+    implicit object dumpToJson extends Format[Task] {
+      def writes(o: Task): JsValue = JsObject(
+        List(
+          "id" -> JsNumber(o.id),
+          "text" -> JsString(o.text),
+          "done" -> JsBoolean(o.done)
+        )
+      )
+
+      def reads(json: JsValue): Task = Task(
+        id = (json \ "id").as[Int],
+        text = (json \ "text").as[String],
+        done = (json \ "done").as[Boolean]
+      )
+    }
+
+  }
+  */
+  //returns a list of tasks as json
+  def tasks = Action { implicit request =>
+    // val values = List(Task(1, "learn angular", true), Task(2, "build an Angular app"))
+    // Ok(Json.toJson(values).toString()).as("application/json")
+
+  }
+
+}

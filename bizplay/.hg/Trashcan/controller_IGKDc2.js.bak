@@ -1,0 +1,12 @@
+'use strict';
+
+/* Controllers */
+
+function MappingListCtrl($scope, $http) {
+    $http.get('/list').success(function(data) {
+        $scope.mappings = data;
+    });
+
+    $scope.orderProp = 'clearinghousePayerID';
+
+}
